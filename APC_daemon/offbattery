@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# This shell script if placed in /etc/apcupsd
+# will be called by /etc/apcupsd/apccontrol when the
+# UPS goes back on to the mains after a power failure.
+# We send an email message to root to notify him.
+
+# Customized by Charles-Emmanuel CAMUS (github.com/miniche)
+
+# From (one mail address)
+FROM_MAIL='your.mail@host.com'
+# To : you can add more than one address. They must be separated by a space
+TO_MAIL='your.mail@host.com'
+
+APCUPSD_MAIL="/usr/sbin/sendmail"
+
+# Getting some values...
+HOSTNAME=`hostname`
+MSG="$HOSTNAME - Power has returned"
+LEFT=`/sbin/apcaccess status | grep TIMELEFT | awk 'BEGIN { FS=":" } END { print $2 }'`
+CHARGE=`/sbin/apcaccess status | grep BCHARGE | awk 'BEGIN { FS=":" } END { print $2 }'`
+LOAD_CAPACITY=`/sbin/apcaccess status | grep LOADPCT | awk 'BEGIN { FS=":" } END { print $2 }'`
+
+#
+(
+    echo "From: $FROM_MAIL"
+    echo "Subject: $MSG"
+    echo " "
+    echo "$MSG"
+    echo " "
+    echo "Time left on battery : $LEFT"
+    echo "Charge remaining : $CHARGE"
+    echo "Load capacity : $LOAD_CAPACITY"
+    echo " "
+    echo " "
+    echo "Full status report :"
+    echo " "
+    /sbin/apcaccess status
+) | $APCUPSD_MAIL -s "$MSG" $TO_MAIL
+exit 0
