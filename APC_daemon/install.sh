@@ -4,7 +4,7 @@
 # You must be root to execute this.
 
 # Author : Charles-Emmanuel CAMUS (github.com/miniche)
-# License : GNU GPLv3 (http://www.gnu.org/licenses/gpl.html)
+# License : MIT (http://opensource.org/licenses/MIT)
 
 if [[ $EUID -ne 0 ]]; then
 	echo " "

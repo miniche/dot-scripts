@@ -17,8 +17,8 @@ Daemon and scripts are tested with a APC Back-UPS Pro 900.
 __install.sh__ = Installing the apcupsd daemon and dependancies.
 
 To execute it :
-    chmod +x install.sh
-    ./install.sh
+> chmod +x install.sh
+> ./install.sh
 
 
 
