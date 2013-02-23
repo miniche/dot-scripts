@@ -1,0 +1,20 @@
+# Bash profile, for Debian
+# Designed to be added in ~/.bashrc
+# By che (https://github.com/miniche)
+
+# Some colors
+NM="\[\033[0;38m\]"
+HI="\[\033[0;37m\]"
+HII="\[\033[0;36m\]"
+SI="\[\033[0;33m\]"
+IN="\[\033[0m\]"
+SH="\[\e[1;34m\]"
+red='\e[0;31m'
+
+PS1="$NM[ $red\u$IN on $HII\h$IN in $SI\W$IN ] "
+CLICOLOR=1
+LSCOLORS=GxFxCxDxBxegedabagaced
+
+export LS_OPTIONS='--color=auto'
+eval `dircolors`
+alias ls='ls $LS_OPTIONS'

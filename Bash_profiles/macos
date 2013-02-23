@@ -1,0 +1,30 @@
+# Bash profile, for Mac OS X
+# Designed to be added in ~/.bash_profile
+# By che (https://github.com/miniche)
+
+alias db='open ~/Dropbox/'
+
+# Couleurs du préfix du terminal
+NM="\[\033[0;38m\]" 
+HI="\[\033[0;37m\]" 
+HII="\[\033[0;36m\]" 
+SI="\[\033[0;33m\]"
+IN="\[\033[0m\]"
+SH="\[\e[1;34m\]"
+
+USERDISPLAY='' 
+
+if [ \$ == "$" ]; then
+    USERDISPLAY='$'
+else
+    USERDISPLAY='root'
+fi
+
+export PS1="$NM[ $HI\u$IN on $HII\h$IN in $SI\W$IN with $SH\$ $IN] "
+
+export CLICOLOR=1
+
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# For git support
+export PATH=”/Applications/Xcode.app/Contents/Developer/usr/libexec/git-core/”:$PATH
