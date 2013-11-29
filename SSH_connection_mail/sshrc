@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Script called when a new SSH connection is established.
+# This will send a alert mail to server owner/administrators.
+# Edit the Python script to modify email addresses.
+SERVER_NAME=yourserver.com
+USER_IP=`echo $SSH_CONNECTION | cut -d " " -f 1`
+USER_NAME=$USER
+
+python /usr/local/bin/perso/ssh_connect.py "${USER_NAME}" "${SERVER_NAME}" "${USER_IP}"
