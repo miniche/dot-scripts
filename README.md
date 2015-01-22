@@ -1,11 +1,11 @@
-# Debian-scripts #
+# dot-scripts #
 
-This repository contains scripts that I created for some needs.
+Here, you will find some useful scripts or software, made for Unix/Linux.
 
-All this scripts are on MIT License (http://opensource.org/licenses/MIT)
+All this scripts are published under the MIT License (http://opensource.org/licenses/MIT)
 
-__You can fork this repository, do some amazing changes and submit a pull request!__
-__Feel free to contact me for suggestions or informations, you're always welcome.__
+__You can fork this repository, do amazing changes and submit a pull request!__
+__Feel free to contact me for suggestions, you're always welcome.__
 
 ----
 
